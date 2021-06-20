@@ -27,3 +27,4 @@ Example of generated password
 
 #### Link to the deployed application
 
+https://pasgen-manley.github.io/pasgen-manley-password-generator/
