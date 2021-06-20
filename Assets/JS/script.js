@@ -15,16 +15,19 @@ var confirmLowerCase;
 var confirmUpperCase;
 var confirmSpecialChar;
 
+
+// Code to determine password length
 function generatePassword() {
   var confirmLength = prompt("How long would you like your password to be? Password must be between 8 and 128 characters");
 
   while(confirmLength <= 7 || confirmLength >= 128) {
-    alert("Hey! Password must be between 8 and 128 character! Please try again :)");
+    alert("Hey! Password must be between 8 and 128 characters! Please try again :)");
     var confirmLength = prompt("How long would you like your password to be? Password must be between 8 and 128 characters");
   }
 
   alert("You have chosen " + confirmLength + " characters.");
 
+  // Code to confirm password varibles
   var confirmNumber = confirm("Click OK if you would like to include numbers");
   var confirmLowerCase = confirm("Click OK if you would like to include lowercase alphabetical characters");
   var confirmUpperCase = confirm("Click OK if you would like to include uppercase alphabetical characters");
@@ -37,6 +40,7 @@ function generatePassword() {
       var confirmSpecialChar = confirm("Click OK if you would like to include special characters");
     }
 
+  // If statements that combine or dont combine the varibles above
   var userPassword = []
 
   if (confirmNumber) {
@@ -57,6 +61,7 @@ function generatePassword() {
   
   console.log(userPassword);
 
+  // Code to randomise the chosen password variables
   var randomisedpassword = ""
 
   for (var i = 0; i < confirmLength; i++) {
@@ -65,13 +70,6 @@ function generatePassword() {
   }
   return randomisedpassword;
 
-}
-
-
-function copyPassword() {
-  document.getElementById("password").select();
-  document.execCommand("Copy");
-  alert("Password copied to clipboard!");
 }
 
 // Write password to the #password input
